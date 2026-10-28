@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>McWallet</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<style>
+body{font-family:sans-serif;background:#0f172a;color:#fff;text-align:center;padding:40px 20px}
+.card{background:#1e293b;border-radius:16px;padding:24px;margin-top:24px}
+</style>
+</head>
+<body>
+<h1>McWallet</h1>
+<div class="card"><p id="hola">Cargando...</p><p>Saldo: 0.00</p></div>
+<script>
+const tg = window.Telegram.WebApp;
+tg.ready();
+const u = tg.initDataUnsafe && tg.initDataUnsafe.user;
+document.getElementById("hola").textContent = u ? "Hola, " + u.first_name : "Hola";
+</script>
+</body>
+</html>
